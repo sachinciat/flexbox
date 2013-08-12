@@ -1,0 +1,18 @@
+@charset "utf-8";
+/* CSS Document */
+
+.gallery{}
+.gallery li{	
+	width:100px;
+	height:100px;
+	display:block;
+	float:left;
+	margin-right:10px
+}
+.gallery li a{	
+	width:100px;
+	height:100px;
+}
+.gallery li a img{	
+	max-width:100px;
+}
