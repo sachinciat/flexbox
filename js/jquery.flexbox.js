@@ -8,7 +8,7 @@
 				speed: 600,
 				
 				exThumbImage: false,
-				thumbnail: false,
+				thumbnail: true,
 				
 				escKey:true,
 				mobileSrc: true,
@@ -328,7 +328,10 @@
 				if(settings.mode == 'slide'){
 					if(this.doCss()){
 						$slider.css({ left : (-index*100)+'%' });
-					}else{
+					}else if(!this.doCss() && !flexBoxOn){
+						$slider.css({ left : (-index*100)+'%' });
+					}
+					else if(!this.doCss() && flexBoxOn){
 						$slider.animate({ left : (-index*100)+'%' });
 					}
 				}
@@ -382,7 +385,7 @@
 				settings.onBeforeClose.call( this );
 				flexBoxOn = false;
 				$('body').removeClass('flexBox');
-				//$(window).bind('resize',resizeWindow());
+				$(window).unbind('resize');
 				$(window).unbind('keyup');
 				$gallery.remove();
 				settings.onCloseAfter.call( this );
