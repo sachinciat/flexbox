@@ -10,7 +10,7 @@
 				exThumbImage: false,
 				thumbnail: false,
 				
-				escKey:false,
+				escKey:true,
 				mobileSrc: true,
 				mobileSrcMaxWidth :640,
 				
@@ -382,7 +382,7 @@
 				settings.onBeforeClose.call( this );
 				flexBoxOn = false;
 				$('body').removeClass('flexBox');
-				$(window).bind('resize',resizeWindow());
+				//$(window).bind('resize',resizeWindow());
 				$(window).unbind('keyup');
 				$gallery.remove();
 				settings.onCloseAfter.call( this );
